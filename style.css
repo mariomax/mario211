@@ -1,0 +1,234 @@
+/**
+Theme Name: Astra Child
+Author: Brainstorm Force
+Author URI: http://wpastra.com/about/
+Description: Astra is the fastest, fully customizable & beautiful theme suitable for blogs, personal portfolios and business websites. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with schema.org code integrated so search engines will love your site. Astra offers plenty of sidebar options and widget areas giving you a full control for customizations. Furthermore, we have included special features and templates so feel free to choose any of your favorite page builder plugin to create pages flexibly. Some of the other features: # WooCommerce Ready # Responsive # Compatible with major plugins # Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and beautiful theme!
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: astra-child
+Template: astra
+*/
+
+/* Color palette */
+
+:root {
+  --white: #FFF;
+  --light: #D2D2D2;
+  --orange: #eb4625;
+  --blue: #20557D;
+  --mid: #5B5B5B;
+  --green: #0E7E12;
+  --dark: #090909;
+}
+
+/* Navigation */
+
+/* Home */
+#home-titles {
+  height: calc(100vh - 150px);
+}
+
+.home-page h1 {
+  color: var(--white);
+  margin: 60vh 1em 0 0;
+  text-align: right;
+}
+
+.home-page h2 {
+  color: var(--light);
+  margin: .5em 1em 10vh;
+  text-align: right;
+}
+
+h2.service-title {
+  color: var(--blue);
+  display: inline;
+}
+
+p.service-info {
+  display: inline;
+}
+
+ul.features-list {
+  margin: 0 0 1.5em 1em;
+}
+
+.features-list li {
+  font-size: 16px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 16px;
+}
+
+.features-list li:before {
+  content: "\25BA \0020";
+  color: var(--orange);
+  font-size: 10px;
+  position: absolute;
+  top: 2px;
+  left: -1px;
+}
+
+h2.widget-title {
+  color: var(--blue);
+}
+
+#about .elementor-widget-container {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  flex-direction: column-reverse;
+  margin-bottom: 2rem;
+}
+
+#about p {
+  color: var(--mid);
+}
+
+img.mopic {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+#about figcaption {
+  color: var(--blue);
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+#sb_instagram .sbi_follow_btn a {
+  background: var(--blue);
+}
+
+#sb_instagram .sbi_follow_btn a:hover {
+  box-shadow: inset 0 0 10px 20px var(--orange);
+}
+
+@media (min-width: 768px) {
+  #home-titles {
+    height: calc(100vh - 140px);
+  }
+
+  #page {
+    display: grid;
+    grid-template-columns: repeat(1fr, 2fr);
+    grid-template-areas:
+      "mast con con"
+      "foot foot foot";
+  }
+
+  #page #masthead {
+    grid-area: mast;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    align-content: space-between;
+    position: fixed;
+    height: 100vh;
+    width: 33.33vw;
+  }
+
+  #page #masthead .main-header-bar-wrap {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+  }
+
+  #page #content {
+    grid-area: con;
+  }
+
+  #page #colophon {
+    grid-area: foot;
+  }
+
+  #page {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+
+  nav .main-navigation ul li {
+    width: 100%;
+  }
+
+  .wp-caption .wp-caption-text {
+    margin: .5em 0 0;
+  }
+
+  img.mopic {
+    float: left;
+    shape-outside: circle(50%);
+    margin: 10px;
+    width: 13rem;
+  }
+
+  #about figcaption {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+  .ast-right-sidebar #primary {
+    padding-right: calc(1rem + 20px);
+  }
+
+  .ast-right-sidebar #secondary {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+  /* .home-page {
+    background-image: url(https://atagdev.com/wp-content/uploads/2019/08/hero-large.jpg);
+  } */
+  #portfolio-col .elementor-column-wrap .elementor-widget-wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #portfolio-col .elementor-column-wrap .elementor-widget-wrap {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* https://anchortagdesign.com/wp-content/uploads/2019/01/b17port-edited-e1551939064698.jpg */
+.wtf-headline h2 {
+  background-image: url(https://anchortagdesign.com/wp-content/uploads/2019/01/b17port-edited-e1551939064698.jpg);
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+  /* color: transparent; */
+}
+
+@media screen and (min-width: 1200px) {
+  #page {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  #page #masthead {
+    width: 25vw;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  #page {
+    grid-template-columns: 1fr 4fr;
+  }
+
+  #page #masthead {
+    width: 20vw;
+  }
+}
