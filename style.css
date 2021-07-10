@@ -26,34 +26,28 @@ Template: astra
 #masthead {
   background: var(--dark);
 }
+
+.wp-block-cover.cover-header h1 {
+  font-size: 3rem;
+}
+
+.wp-block-cover.cover-header h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0;
+}
+
 /* Navigation */
+#ast-mobile-header .ast-logo-title-inline .ast-site-identity {
+  padding: 0;
+}
+
+/* Content */
+.ast-separate-container #content .ast-container {
+  padding-left: 0;
+  padding-right: 0;
+}
 
 /* Home */
-#home-titles {
-  height: calc(100vh - 150px);
-}
-
-.home-page h1 {
-  color: var(--white);
-  margin: 60vh 1em 0 0;
-  text-align: right;
-}
-
-.home-page h2 {
-  color: var(--light);
-  margin: .5em 1em 10vh;
-  text-align: right;
-}
-
-h2.service-title {
-  color: var(--blue);
-  display: inline;
-}
-
-p.service-info {
-  display: inline;
-}
-
 ul.features-list {
   margin: 0 0 1.5em 1em;
 }
@@ -72,6 +66,39 @@ ul.features-list {
   position: absolute;
   top: 2px;
   left: -1px;
+}
+
+/* Portfolio */
+.project-group .wp-block-group__inner-container {
+  display: grid;
+  gap: 1rem;
+}
+
+/* Blog */
+#primary .ast-archive-description {
+  background-image: url(https://mario211.com/wp-content/uploads/2021/07/archive-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ast-archive-description .ast-archive-title {
+  text-align: center;
+  color: var(--white);
+}
+
+/* Posts */
+.wp-block-media-text.dark-media-text {
+  background: var(--dark);
+}
+
+.dark-media-text h3,
+.dark-media-text p {
+  color: var(--white);
+}
+
+.dark-media-text a {
+  color: var(--orange);
 }
 
 #about .elementor-widget-container {
@@ -109,6 +136,13 @@ img.mopic {
   box-shadow: inset 0 0 10px 20px var(--orange);
 }
 
+@media (max-width: 544px) {
+  /* .ast-separate-container #content .ast-container {
+    padding-left: 0;
+    padding-right: 0;
+  } */
+}
+
 @media (min-width: 768px) {
   #masthead #ast-desktop-header {
     display: grid;
@@ -140,10 +174,10 @@ img.mopic {
 
   #page {
     display: grid;
-    grid-template-columns: repeat(1fr, 2fr);
+    grid-template-columns: 1fr 2fr;
     grid-template-areas:
-      "mast con con"
-      "mast foot foot";
+      "mast con"
+      "mast foot";
   }
 
   #page #masthead {
@@ -177,38 +211,121 @@ img.mopic {
     grid-template-columns: 1fr 2fr;
   }
 
-  .home-grid div.uagb-post__items {
+  nav .main-navigation ul li {
+    width: 100%;
+  }
+
+  #content .ast-container .entry-content>h2,
+  #content .ast-container .entry-content>h3,
+  #content .ast-container .entry-content>h4,
+  #content .ast-container .entry-content>p,
+  #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>.wp-block-columns,
+  #content .ast-container .entry-content>.wp-block-media-text,
+  #content .ast-container .entry-content>.wp-block-gallery,
+  .archive #content .ast-container #main {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .portfolio-grid div.uagb-post__items {
     padding: 2rem;
   }
 
-  nav .main-navigation ul li {
-    width: 100%;
+  .intro-div {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+  }
+
+  .intro-div p {
+    max-width: 70%;
+    padding-left: 1.5rem;
+    font-size: 18px;
+    line-height: 2.25;
+  }
+
+  .intro-div .intro-img {
+    float: right;
+    shape-outside: circle(50%);
+    margin: 20px;
+    padding-right: 10px;
+    border-radius: 50%;
+    max-width: 29%;
+  }
+
+  #page #content .ast-container #primary {
+    margin-top: 0;
+  }
+
+  #page #content .ast-container #primary #main article {
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
   }
 
   .wp-caption .wp-caption-text {
     margin: .5em 0 0;
   }
 
-  img.mopic {
-    float: left;
-    shape-outside: circle(50%);
-    margin: 10px;
-    width: 13rem;
+  .project-group {
+    padding: 1rem;
   }
 
-  #about figcaption {
-    display: none;
+  .project-group .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .project-group .wp-block-group__inner-container .wp-block-image {
+    margin-bottom: 0;
+  }
+
+  .portfolio-grid .uagb-post__items {
+    gap: 1rem;
+  }
+
+  #primary #main .portfolio-grid .uagb-post__items article {
+    width: calc(50% - 1rem);
   }
 }
 
-@media (min-width: 993px) {
+@media (max-width: 920px) {
+  .wp-block-columns {
+    display: block;
+  }
+}
+
+@media (min-width: 921px) {
+  #ast-hf-menu-1 li a {
+    padding: 0;
+  }
+
+  #ast-desktop-header .site-primary-header-wrap {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+
+  #page {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  #page #masthead {
+    width: 26vw;
+  }
+
   .wp-block-cover.cover-header {
     margin-bottom: 2rem;
     min-height: 500px
   }
 
+  .wp-block-cover.cover-header h1 {
+    font-size: 3.3rem;
+  }
+
   .wp-block-cover.cover-header h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 0;
   }
 
@@ -217,15 +334,23 @@ img.mopic {
     padding-bottom: 3rem;
     padding-left: 0;
   }
+
+  /* #page #content .ast-container #primary #main article {
+    padding-right: 0;
+    padding-left: 0;
+  } */
+
   /* Not shorthand to overwrite Astra theme. */
 
-  #content .ast-container .entry-content > h2,
-  #content .ast-container .entry-content > h3,
-  #content .ast-container .entry-content > h4,
-  #content .ast-container .entry-content > p,
-  #content .ast-container .entry-content > blockquote,
-  #content .ast-container .entry-content > .wp-block-columns,
-  #content .ast-container .entry-content > .wp-block-media-text {
+  #content .ast-container .entry-content>h2,
+  #content .ast-container .entry-content>h3,
+  #content .ast-container .entry-content>h4,
+  #content .ast-container .entry-content>p,
+  #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>.wp-block-columns,
+  #content .ast-container .entry-content>.wp-block-media-text,
+  #content .ast-container .entry-content>.wp-block-gallery,
+  .archive #content .ast-container #main {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -242,9 +367,25 @@ img.mopic {
   .ast-right-sidebar #secondary {
     padding-left: 20px;
   }
+
+  /* Contact */
+  .page-id-2206 .wpcf7 .names {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+            justify-content: space-between;
+  }
+
+  .page-id-2206 .wpcf7 .names label {
+    max-width: 47%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
+  #ast-desktop-header .site-primary-header-wrap {
+    padding-left: 2rem;
+    padding-right: 0;
+  }
 
   /* .home-page {
     background-image: url(https://atagdev.com/wp-content/uploads/2019/08/hero-large.jpg);
@@ -254,6 +395,24 @@ img.mopic {
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 1.5rem;
     grid-row-gap: 1.5rem;
+  }
+
+  .project-group {
+    padding: 2rem;
+  }
+  
+  .project-group .wp-block-group__inner-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .portfolio-grid .uagb-post__items {
+    gap: 2rem;
+  }
+
+  #primary #main .portfolio-grid .uagb-post__items article {
+    width: calc(33% - 1.33rem);
   }
 }
 
