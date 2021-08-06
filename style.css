@@ -36,6 +36,12 @@ Template: astra
   margin-bottom: 0;
 }
 
+.wp-block-cover.cover-header,
+.category .ast-archive-description {
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, .5) 0px 5px 7px;
+}
+
 /* Navigation */
 #ast-mobile-header .ast-logo-title-inline .ast-site-identity {
   padding: 0;
@@ -48,6 +54,19 @@ Template: astra
 }
 
 /* Home */
+.intro-div p {
+  padding-left: 1.5rem;
+  font-size: 18px;
+  line-height: 2.25;
+}
+
+.intro-div .intro-img {
+  float: left;
+  shape-outside: circle(50%);
+  margin: 1rem 1rem 1rem 0;
+  border-radius: 50%;
+  max-width: 29%;
+}
 ul.features-list {
   margin: 0 0 1.5em 1em;
 }
@@ -68,6 +87,39 @@ ul.features-list {
   left: -1px;
 }
 
+ul.featured-loop {
+  margin: 0;
+}
+
+ul.featured-loop li {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas:
+    "pic head"
+    "content content";
+}
+
+ul.featured-loop li figure {
+  grid-area: pic;
+}
+
+ul.featured-loop li .wp-block-post-title {
+  grid-area: head;
+  padding-left: 1rem;
+}
+
+ul.featured-loop li .wp-block-post-date {
+  grid-area: head;
+  padding-left: 1rem;
+  align-self: flex-end;
+}
+
+ul.featured-loop li .wp-block-post-excerpt {
+  grid-area: content;
+  width: 100%;
+}
+
+
 /* Portfolio */
 .project-group .wp-block-group__inner-container {
   display: grid;
@@ -85,6 +137,16 @@ ul.features-list {
 .ast-archive-description .ast-archive-title {
   text-align: center;
   color: var(--white);
+}
+
+.cat-list {
+  display: none;
+}
+
+.cat-list ul,
+ul.wp-cat-list {
+  font-weight: 600;
+  list-style: none;
 }
 
 /* Posts */
@@ -124,7 +186,7 @@ ul.features-list {
 .wp-block-buttons .wp-block-button a.wp-block-button__link {
   background-color: var(--blue);
   border-radius: 2px;
-  font-family: 'Ropa Sans',sans-serif;
+  font-family: 'Ropa Sans', sans-serif;
   font-size: 22px;
   padding: 1px 15px;
   text-transform: uppercase;
@@ -142,6 +204,10 @@ ul.features-list {
   text-align: center;
 }
 
+figure {
+  text-align: center;
+}
+
 #sb_instagram .sbi_follow_btn a {
   background: var(--blue);
 }
@@ -151,12 +217,28 @@ ul.features-list {
 }
 
 @media (max-width: 544px) {
+  .home.ast-no-sidebar.ast-separate-container .entry-content .alignfull {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .wp-block-cover.cover-header h2 {
+    font-size: 2.3rem;
+    text-align: center;
+  }
+
+
+.wp-block-media-text__content ul {
+  margin: 0 0 1.5em 0;
+  font-size: 20px;
+}
 
   #content .ast-container .entry-content>h2,
   #content .ast-container .entry-content>h3,
   #content .ast-container .entry-content>h4,
   #content .ast-container .entry-content>p,
   #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>figure,
   #content .ast-container .entry-content>.wp-block-columns,
   #content .ast-container .entry-content>.wp-block-media-text,
   #content .ast-container .entry-content>.wp-block-gallery,
@@ -167,9 +249,17 @@ ul.features-list {
   }
 
   #main article.type-page.ast-article-single {
-    padding-top: 4rem;
+    padding-top: 3rem;
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .entry-content .wp-block-media-text__content h3 {
+    font-size: 2rem;
+  }
+
+  .wp-block-spacer.spacer-100 {
+    height: 66px;
   }
 }
 
@@ -245,13 +335,16 @@ ul.features-list {
     width: 100%;
   }
 
+  /* No shorthand to overwrite Astra theme. */
+
   #content .ast-container .entry-content>h2,
   #content .ast-container .entry-content>h3,
   #content .ast-container .entry-content>h4,
   #content .ast-container .entry-content>p,
   #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>figure,
+  #content .ast-container .entry-content>.wp-block-group,
   #content .ast-container .entry-content>.wp-block-columns,
-  #content .ast-container .entry-content>.wp-block-media-text,
   #content .ast-container .entry-content>.wp-block-gallery,
   .archive #content .ast-container #main {
     padding-left: 1rem;
@@ -267,28 +360,35 @@ ul.features-list {
     margin-bottom: 0;
   }
 
-  .intro-div {
-    display: -webkit-box;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-  }
-
   .intro-div p {
-    max-width: 70%;
     padding-left: 1.5rem;
+    padding-top: 1rem;
     font-size: 18px;
-    line-height: 2.25;
+    line-height: 2;
   }
 
   .intro-div .intro-img {
-    float: right;
+    float: left;
+    shape-outside: circle(50%);
+    margin: 1rem 1rem 1rem 0;
+    border-radius: 50%;
+    max-width: 31%;
+  }
+
+  /* Demo BG image with effects */
+  /* .intro-div .placeholder-img {
+    float: left;
     shape-outside: circle(50%);
     margin: 20px;
-    padding-right: 10px;
     border-radius: 50%;
-    max-width: 29%;
-  }
+    background-image: url(https://mario211.com/wp-content/uploads/2021/07/boxing-gloves-typewriter-v2.jpg);
+    background-color: var(--orange);
+    background-blend-mode: hard-light;
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+  } */
 
   #page #content .ast-container #primary {
     margin-top: 0;
@@ -328,6 +428,7 @@ ul.features-list {
 }
 
 @media (max-width: 921px) {
+
   .archive #primary {
     margin-top: 0;
   }
@@ -360,6 +461,25 @@ ul.features-list {
 }
 
 @media (min-width: 921px) {
+
+  #content .ast-container .entry-content>h2,
+  #content .ast-container .entry-content>h3,
+  #content .ast-container .entry-content>h4,
+  #content .ast-container .entry-content>p,
+  #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>figure,
+  #content .ast-container .entry-content>.wp-block-group,
+  #content .ast-container .entry-content>.wp-block-columns,
+  #content .ast-container .entry-content>.wp-block-gallery,
+  .archive #content .ast-container #main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  #content .ast-container .entry-content>.wp-block-media-text {
+    margin: 1rem 2rem;
+  }
+
   #ast-hf-menu-1 li a {
     padding: 0;
   }
@@ -377,11 +497,6 @@ ul.features-list {
     width: 26vw;
   }
 
-  .wp-block-cover.cover-header {
-    margin-bottom: 2rem;
-    min-height: 500px
-  }
-
   .wp-block-cover.cover-header h1 {
     font-size: 3.3rem;
   }
@@ -391,30 +506,21 @@ ul.features-list {
     margin-bottom: 0;
   }
 
-  #page #content .ast-container {
-    padding-right: 0;
-    padding-bottom: 3rem;
-    padding-left: 0;
+  blockquote.wp-block-quote {
+    max-width: calc(100% - 20vw);
+    margin-left: 10vw;
+    border-left: 10px solid var(--light);
+    background: #f0f0f0;
   }
 
-  /* #page #content .ast-container #primary #main article {
+  blockquote.wp-block-quote p {
+    font-size: 22px;
+    color: var(--blue);
+  }
+
+  #page #content .ast-container {
     padding-right: 0;
     padding-left: 0;
-  } */
-
-  /* Not shorthand to overwrite Astra theme. */
-
-  #content .ast-container .entry-content>h2,
-  #content .ast-container .entry-content>h3,
-  #content .ast-container .entry-content>h4,
-  #content .ast-container .entry-content>p,
-  #content .ast-container .entry-content>blockquote,
-  #content .ast-container .entry-content>.wp-block-columns,
-  #content .ast-container .entry-content>.wp-block-media-text,
-  #content .ast-container .entry-content>.wp-block-gallery,
-  .archive #content .ast-container #main {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   #page #content .ast-container div.wp-block-cover.cover-header {
@@ -480,6 +586,19 @@ ul.features-list {
   .wp-block-media-text__content h3 {
     font-size: 2.25rem;
   }
+
+  .cat-list {
+    display: block;
+    padding: 0 2rem;
+  }
+
+  .cat-list ul {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: .5rem 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -501,20 +620,20 @@ ul.features-list {
 
 @media screen and (min-width: 1200px) {
   #page {
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 20vw 80vw;
   }
 
   #page #masthead {
-    width: 25vw;
+    width: 20vw;
   }
 }
 
 @media screen and (min-width: 1400px) {
   #page {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 17vw 83vw;
   }
 
   #page #masthead {
-    width: 20%;
+    width: 17vw;
   }
 }
