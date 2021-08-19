@@ -67,6 +67,7 @@ Template: astra
   border-radius: 50%;
   max-width: 29%;
 }
+
 ul.features-list {
   margin: 0 0 1.5em 1em;
 }
@@ -149,6 +150,24 @@ ul.wp-cat-list {
   list-style: none;
 }
 
+article .post-content h2.entry-title,
+article .post-content h2.entry-title a,
+.portfolio-grid article .uagb-post__text h3.uagb-post__title,
+.portfolio-grid article .uagb-post__text h3.uagb-post__title a {
+  color: var(--blue);
+  font-size: 2rem;
+}
+
+article .post-content h2.entry-title a:hover,
+.portfolio-grid article .uagb-post__text h3.uagb-post__title a:hover {
+  color: var(--orange);
+}
+
+.portfolio-grid .uagb-post__text .uagb-post-grid-byline {
+  color: var(--dark);
+  font-size: 16px;
+}
+
 /* Posts */
 .wp-block-media-text.dark-media-text {
   background: var(--dark);
@@ -176,20 +195,21 @@ ul.wp-cat-list {
   color: var(--mid);
 }
 
-/* img.mopic {
-  display: block;
-  margin: 0 auto;
-  max-width: 80%;
-} */
-
 /* Block elements */
+.entry-content h2 {
+  font-size: 2rem;
+}
+
+.entry-content p a {
+  font-weight: 700;
+}
+
 .wp-block-buttons .wp-block-button a.wp-block-button__link {
   background-color: var(--blue);
   border-radius: 2px;
-  font-family: 'Ropa Sans', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 22px;
   padding: 1px 15px;
-  text-transform: uppercase;
 }
 
 .wp-block-buttons .wp-block-button a.wp-block-button__link:hover {
@@ -198,7 +218,7 @@ ul.wp-cat-list {
 
 #about figcaption {
   color: var(--blue);
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
   font-size: 12px;
   margin-top: 5px;
   text-align: center;
@@ -208,12 +228,65 @@ figure {
   text-align: center;
 }
 
+.wp-block-spacer.spacer-100 {
+  height: 50px !important;
+}
+
+article .wp-block-column ul {
+  margin: 0 0 1.5em 1em;
+}
+
+article .wp-block-column ul li a {
+  color: var(--blue)!important;
+}
+
+article .wp-block-column ul li a:hover {
+  color: var(--orange)!important;
+}
+
 #sb_instagram .sbi_follow_btn a {
   background: var(--blue);
 }
 
 #sb_instagram .sbi_follow_btn a:hover {
   box-shadow: inset 0 0 10px 20px var(--orange);
+}
+
+/* Forms */
+form.wpcf7-form p input[type=submit] {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  padding-top: 1px;
+  padding-right: 15px;
+  padding-bottom: 1px;
+  padding-left: 15px;
+}
+
+form.wpcf7-form p input[type=submit]:hover {
+  color: var(--white);
+  background-color: var(--dark);
+}
+
+form.wpcf7-form span.wpcf7-list-item {
+  margin: 0;
+}
+
+form.wpcf7-form input[type=text],
+form.wpcf7-form input[type=email],
+form.wpcf7-form label span textarea {
+  padding: .5rem 1rem;
+}
+
+form.wpcf7-form label span textarea {
+  height: 200px;
+}
+
+#ast-scroll-top:hover {
+  background-color: var(--dark);
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }
 
 @media (max-width: 544px) {
@@ -228,10 +301,10 @@ figure {
   }
 
 
-.wp-block-media-text__content ul {
-  margin: 0 0 1.5em 0;
-  font-size: 20px;
-}
+  .wp-block-media-text__content ul {
+    margin: 0 0 1.5em 0;
+    font-size: 20px;
+  }
 
   #content .ast-container .entry-content>h2,
   #content .ast-container .entry-content>h3,
@@ -254,16 +327,31 @@ figure {
     padding-right: 0;
   }
 
-  .entry-content .wp-block-media-text__content h3 {
-    font-size: 2rem;
+  .single #primary #main article {
+    padding-right: 0;
+    padding-left: 0;
   }
 
-  .wp-block-spacer.spacer-100 {
-    height: 66px;
+  .entry-content .wp-block-media-text__content h3 {
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 768px) {
+  .entry-content h1,
+  .entry-content h2 {
+    margin-bottom: 2rem;
+  }
+  
+  h2.wp-block-post-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .entry-content h2 {
+    font-size: 2.5rem;
+  }
+  
   #masthead #ast-desktop-header {
     display: grid;
     grid-template-rows: -webkit-min-content;
@@ -349,6 +437,11 @@ figure {
   .archive #content .ast-container #main {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  #content .ast-container .post-content .entry-content.clear p {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .portfolio-grid div.uagb-post__items {
@@ -518,6 +611,10 @@ figure {
     color: var(--blue);
   }
 
+  .wp-block-spacer.spacer-100 {
+    height: 75px !important;
+  }
+
   #page #content .ast-container {
     padding-right: 0;
     padding-left: 0;
@@ -625,6 +722,12 @@ figure {
 
   #page #masthead {
     width: 20vw;
+  }
+}
+
+@media screen and (min-width: 1330px) {
+  #content .ast-container .entry-content .wp-block-media-text.service-media-text {
+    margin: 0 2rem;
   }
 }
 
