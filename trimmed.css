@@ -1,0 +1,77 @@
+ul.features-list {
+  margin: 0 0 1.5em 1em;
+}
+
+.features-list li {
+  font-size: 16px;
+  list-style-type: none;
+  position: relative;
+  padding-left: 16px;
+}
+
+.features-list li:before {
+  content: "\25BA \0020";
+  color: var(--orange);
+  font-size: 10px;
+  position: absolute;
+  top: 2px;
+  left: -1px;
+}
+
+ul.featured-loop {
+  margin: 0;
+}
+
+ul.featured-loop li {
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas:
+    "pic head"
+    "content content";
+}
+
+ul.featured-loop li figure {
+  grid-area: pic;
+}
+
+ul.featured-loop li .wp-block-post-title {
+  grid-area: head;
+  padding-left: 1rem;
+}
+
+ul.featured-loop li .wp-block-post-date {
+  grid-area: head;
+  padding-left: 1rem;
+  align-self: flex-end;
+}
+
+ul.featured-loop li .wp-block-post-excerpt {
+  grid-area: content;
+  width: 100%;
+}
+
+/* https://anchortagdesign.com/wp-content/uploads/2019/01/b17port-edited-e1551939064698.jpg */
+.wtf-headline h2 {
+  background-image: url(https://anchortagdesign.com/wp-content/uploads/2019/01/b17port-edited-e1551939064698.jpg);
+  background-position: center;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-attachment: fixed;
+  /* color: transparent; */
+}
+
+  /* Demo BG image with effects */
+  /* .intro-div .placeholder-img {
+    float: left;
+    shape-outside: circle(50%);
+    margin: 20px;
+    border-radius: 50%;
+    background-image: url(https://mario211.com/wp-content/uploads/2021/07/boxing-gloves-typewriter-v2.jpg);
+    background-color: var(--orange);
+    background-blend-mode: hard-light;
+    background-position: center;
+    background-size: cover;
+    width: 350px;
+    height: 350px;
+  } */
