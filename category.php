@@ -32,10 +32,12 @@ get_header(); ?>
 				<li><a href="/category/web-design">Web Design</a></li>
 				<li><a href="/category/graphic-design/">Graphics</a></li>
 				<li><a href="/category/photography">Photography</a></li>
-				<li><a href="/category/wordpress">WordPress</a></li>
-				<li><a href="/category/woocommerce">WooCommerce</a></li>
-				<li><a href="/category/squarespace">Squarespace</a></li>
-				<li><a href="/category/print">Print</a></li>
+				<li><a href="/category/portfolios">Portfolios</a></li>
+				<li><a href="/category/e-commerce">eCommerce</a></li>
+				<li><a href="/category/small-business">Small Business</a></li>
+				<li><a href="/category/bars-and-cafes">Bars & Cafés</a></li>
+				<li><a href="/category/services">Services</a></li>
+
 			</ul>
 		</div>
 
