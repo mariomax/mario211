@@ -84,6 +84,10 @@ nav#site-navigation ul li a:hover {
   padding-top: 1rem;
 }
 
+.intro-div p strong {
+  color: var(--blue);
+}
+
 /* Intros – multiple pages */
 .intro-div .intro-img {
   box-shadow: rgb(0 0 0 / 50%) 0px 5px 7px;
@@ -142,6 +146,7 @@ ul.wp-cat-list {
   display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
+  -webkit-box-pack: justify;
   justify-content: space-between;
   margin: 0 1rem 1rem;
 }
@@ -273,6 +278,15 @@ article .wp-block-column ul li a:hover {
   color: var(--orange) !important;
 }
 
+h3.email-cta {
+  border-bottom: 5px solid var(--orange);
+  margin-bottom: 1rem;
+  font-size: 30px;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 #sb_instagram .sbi_follow_btn a {
   background: var(--blue);
 }
@@ -312,6 +326,19 @@ form.wpcf7-form label span textarea {
 
 #ast-scroll-top:hover {
   background-color: var(--dark);
+}
+
+.wpcf7-form-control-wrap.accept-this .wpcf7-list-item-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--orange);
+  /* margin-bottom: 2rem;
+    border-bottom: 5px solid var(--blue);
+    max-width: fit-content; */
+}
+
+.wpcf7 .wpcf7-list-item input[type=checkbox] {
+  margin: -10px 4px 0 0;
 }
 
 /* SEO tools */
@@ -460,7 +487,7 @@ form.wpcf7-form label span textarea {
     padding: .5rem;
   }
 
-  .entry-content .portfolio-grid .uagb-post__inner-wrap > .uagb-post__image:first-child {
+  .entry-content .portfolio-grid .uagb-post__inner-wrap>.uagb-post__image:first-child {
     margin-top: 0;
     margin-left: 0;
     margin-right: 0;
@@ -468,35 +495,36 @@ form.wpcf7-form label span textarea {
 }
 
 @media (min-width: 544px) {
-    /* No shorthand to overwrite Astra theme. */
-    .ast-separate-container .ast-article-single {
-      padding-left: 0;
-      padding-right: 0;
-    }
 
-    #content .ast-container .entry-content>h2,
-    #content .ast-container .entry-content>h3,
-    #content .ast-container .entry-content>h4,
-    #content .ast-container .entry-content>p,
-    #content .ast-container .entry-content>blockquote,
-    #content .ast-container .entry-content>figure,
-    #content .ast-container .entry-content>.wp-block-group,
-    #content .ast-container .entry-content>.wp-block-columns,
-    #content .ast-container .entry-content>.wp-block-gallery,
-    #content .ast-container .entry-content .wp-block-query,
-    #content .ast-container .entry-content .portfolio-grid,   
-    .archive #content .ast-container #main {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
+  /* No shorthand to overwrite Astra theme. */
+  .ast-separate-container .ast-article-single {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
-    .intro-div p {
-      padding: .5rem 0;
-    }
+  #content .ast-container .entry-content>h2,
+  #content .ast-container .entry-content>h3,
+  #content .ast-container .entry-content>h4,
+  #content .ast-container .entry-content>p,
+  #content .ast-container .entry-content>blockquote,
+  #content .ast-container .entry-content>figure,
+  #content .ast-container .entry-content>.wp-block-group,
+  #content .ast-container .entry-content>.wp-block-columns,
+  #content .ast-container .entry-content>.wp-block-gallery,
+  #content .ast-container .entry-content .wp-block-query,
+  #content .ast-container .entry-content .portfolio-grid,
+  .archive #content .ast-container #main {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
 
-    .ast-no-sidebar.ast-separate-container .entry-content .alignfull {
-      margin-right: 0;
-      margin-left: 0;
+  .intro-div p {
+    padding: .5rem 0;
+  }
+
+  .ast-no-sidebar.ast-separate-container .entry-content .alignfull {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 
@@ -505,7 +533,7 @@ form.wpcf7-form label span textarea {
     padding-left: 2rem;
     padding-right: 0;
   }
-  
+
   #ast-desktop-header .site-primary-header-wrap nav ul li.current_page_item a {
     color: var(--blue);
   }
@@ -638,7 +666,13 @@ form.wpcf7-form label span textarea {
   }
 
   p.home-posts {
+    font-size: 20px;
     padding-left: 3rem !important;
+  }
+
+  .wp-block-group__inner-container p em {
+    color: var(--blue);
+    font-size: 22px;
   }
 
   #page #content .ast-container #primary {
@@ -866,7 +900,7 @@ form.wpcf7-form label span textarea {
   .single #page #content .ast-container div.wp-block-cover.cover-header {
     margin-bottom: 2rem;
   }
-  
+
   .page-id-2206 h2.has-text-align-center {
     margin-top: 1rem;
   }
@@ -941,6 +975,10 @@ form.wpcf7-form label span textarea {
 
   .page-id-3057 #page #content .ast-container #primary #main article {
     padding: 2rem;
+  }
+
+  .form-column {
+    padding: 0 1rem 0 2rem;
   }
 }
 
