@@ -21,6 +21,26 @@ Template: astra
   --mid: #5B5B5B;
   --green: #0E7E12;
   --dark: #090909;
+
+  /* scale for 1.2 */
+  --font-size-1: 1rem;
+  --font-size-2: 1.2rem;
+  --font-size-3: 1.44rem;
+  --font-size-4: 1.728rem;
+  --font-size-5: 2.074rem;
+  --font-size-6: 2.488rem;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    /* scale for 1.33 */
+    --font-size-1: 1rem;
+    --font-size-2: 1.333rem;
+    --font-size-3: 1.777rem;
+    --font-size-4: 2.369rem;
+    --font-size-5: 3.157rem;
+    --font-size-6: 4.209rem;
+  }
 }
 
 /* .entry-content .intro-div {
@@ -843,14 +863,16 @@ form.wpcf7-form label span textarea {
   }
 
   blockquote.wp-block-quote {
-    max-width: calc(100% - 20vw);
-    margin-left: 10vw;
-    border-left: 10px solid var(--light);
-    background: #f0f0f0;
+    max-width: calc(100% - 10vw);
+    margin-left: 5vw;
+    border-left: 10px solid var(--blue);
+    /* background: #f3f3f3; */
+    background-image: url(https://anchortagdesign.com/wp-content/uploads/2021/11/g-paper-BG-2-1.jpg);
+    background-size: cover;
   }
 
   blockquote.wp-block-quote p {
-    font-size: 22px;
+    font-size: 18px;
     color: var(--blue);
   }
 
