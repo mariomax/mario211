@@ -912,8 +912,6 @@ form.wpcf7-form label span textarea {
 }
 
 @media screen and (min-width: 1024px) {
-
-
   #page #content .ast-container div.wp-block-cover.cover-header {
     margin-bottom: 0;
   }
@@ -1017,6 +1015,9 @@ form.wpcf7-form label span textarea {
     padding-left: 0;
   }
 
+  #content .ast-container {
+    max-width: 2000px !important;
+  }
 
   #content .ast-container .wp-block-query.odd-query,
   #content .ast-container .wp-block-query.even-query {
