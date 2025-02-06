@@ -113,6 +113,7 @@ nav#site-navigation ul li a:hover {
   box-shadow: rgb(0 0 0 / 50%) 0px 5px 7px;
   float: left;
   shape-outside: circle(50%);
+  clip-path: circle(50%);
   margin: 1rem;
   border-radius: 50%;
   max-width: 30%;
@@ -163,10 +164,8 @@ ul.wp-cat-list {
 }
 
 ul.wp-cat-list {
-  display: -webkit-box;
   display: flex;
   flex-wrap: wrap;
-  -webkit-box-pack: justify;
   justify-content: space-between;
   margin: 0 1rem 1rem;
 }
@@ -218,10 +217,7 @@ article .post-content h2.entry-title a:hover,
 }
 
 #about .elementor-widget-container {
-  display: -webkit-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
   flex-direction: column-reverse;
   margin-bottom: 2rem;
 }
@@ -261,12 +257,15 @@ article .post-content h2.entry-title a:hover,
 
 .entry-content .wp-block-query ul li .pic-right {
   flex-wrap: wrap-reverse;
-  display: -webkit-box;
   display: flex;
 }
 
+.pic-right h2 a,
+.pic-right a {
+  color: #fff !important;
+}
+
 .entry-content .wp-block-query ul li .pic-left {
-  display: -webkit-box;
   display: flex;
 }
 
@@ -436,6 +435,11 @@ form.wpcf7-form label span textarea {
   .wp-block-media-text__content ul {
     margin: 0 0 1.5em 0;
     font-size: 20px;
+  }
+
+  .home .wp-block-query.odd-query ul li {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .ast-page-builder-template.page-id-81 .site-content #primary {
@@ -616,10 +620,7 @@ form.wpcf7-form label span textarea {
 
   #page #masthead {
     grid-area: mast;
-    display: -webkit-box;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     flex-direction: column;
     align-content: space-between;
     position: fixed;
@@ -628,7 +629,6 @@ form.wpcf7-form label span textarea {
   }
 
   #page #masthead .main-header-bar-wrap {
-    -webkit-box-flex: 1;
     flex-grow: 1;
   }
 
@@ -710,7 +710,6 @@ form.wpcf7-form label span textarea {
   }
 
   #content .ast-container .entry-content .wp-block-query ul li .wp-block-columns.pic-left {
-    display: -webkit-box;
     display: flex;
   }
 
@@ -845,7 +844,6 @@ form.wpcf7-form label span textarea {
   }
 
   .entry-content .wp-block-query ul li .pic-right {
-    display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
   }
@@ -900,9 +898,7 @@ form.wpcf7-form label span textarea {
 
   /* Contact */
   .page-id-2206 .wpcf7 .names {
-    display: -webkit-box;
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
   }
 
@@ -986,9 +982,7 @@ form.wpcf7-form label span textarea {
   }
 
   .cat-list ul {
-    display: -webkit-box;
     display: flex;
-    -webkit-box-pack: justify;
     justify-content: space-between;
     margin: .5rem 0;
   }
@@ -1030,6 +1024,18 @@ form.wpcf7-form label span textarea {
 
   .archive #main .ast-row article.ast-col-md-4 {
     width: 33.3333333333%;
+  }
+
+  footer.site-footer {
+    margin-top: 1rem;
+  }
+
+  .page-id-81   footer.site-footer {
+    margin-top: 0;
+  }
+
+  .home footer.site-footer {
+    margin-top: 0;
   }
 }
 
