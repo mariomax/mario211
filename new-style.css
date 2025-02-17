@@ -1,0 +1,11 @@
+/* Color palette */
+:root {
+  --white: #FFF;
+  --background: #EFEFEF;
+  --light: #D2D2D2;
+  --orange: #eb4625;
+  --blue: #20557D;
+  --mid: #5B5B5B;
+  --green: #0E7E12;
+  --dark: #090909;
+}
